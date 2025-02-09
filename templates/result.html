@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Ensure mobile responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Joke Result</title>
+    <!-- Bootstrap CSS via CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        {% if language == 'pt' %}
+            <h1 class="text-center">Aqui está sua piada:</h1>
+        {% else %}
+            <h1 class="text-center">Here's your joke:</h1>
+        {% endif %}
+        <div class="card mt-4">
+            <div class="card-body">
+                <p class="card-text">{{ joke }}</p>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">Try another joke</a>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript for Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
